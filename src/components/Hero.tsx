@@ -2,8 +2,8 @@ import sfgProfilePic from "../assets/sabri-avatar.jpeg";
 
 export default function Hero() {
 	return (
-		<section className='bg-white'>
-			<div className='relative isolate px-6 pt-14 lg:px-8 min-h-screen'>
+		<section className='min-w-screen min-h-screen bg-white flex justify-center items-center'>
+			<div className='relative isolate px-6 pt-14 lg:px-8 '>
 				<div
 					className='absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80'
 					aria-hidden='true'
@@ -38,16 +38,16 @@ export default function Hero() {
 						</p>
 						<div className='mt-10 flex items-center justify-center gap-x-6'>
 							<a
-								href='#'
+								href='#portfolio'
 								className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
 							>
 								My porftolio
 							</a>
 							<a
-								href='#'
+								href='#experience'
 								className='text-sm font-semibold leading-6 text-gray-900'
 							>
-								About me <span aria-hidden='true'>→</span>
+								My experience <span aria-hidden='true'>→</span>
 							</a>
 						</div>
 					</div>

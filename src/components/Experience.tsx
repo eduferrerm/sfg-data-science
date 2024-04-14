@@ -45,11 +45,11 @@ const EXPERIENCES: ExperienceType[] = [
 
 export default function Experiences() {
 	return (
-		<section>
+		<section id='experience' className='py-20'>
 			<h2 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
 				Experience
 			</h2>
-			<div className='flex flex-col lg:flex-row lg:p-16 gap-8'>
+			<div className='flex flex-col lg:flex-row py-16 gap-8'>
 				{EXPERIENCES.map((itemData) => (
 					<ExperiencesItems experienceItem={itemData} key={itemData.position} />
 				))}
@@ -79,7 +79,9 @@ function ExperiencesItems({
 				<h4 className='pb-5 text-sm font-bold'>Responsibilities</h4>
 				<ul>
 					{description.map((descriptionItem) => (
-						<li className='pb-5'>{descriptionItem}</li>
+						<li className='pb-5' key={descriptionItem}>
+							{descriptionItem}
+						</li>
 					))}
 				</ul>
 			</div>

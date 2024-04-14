@@ -3,10 +3,9 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
 const navigation = [
-	{ name: "About me", href: "#" },
-	{ name: "Experience", href: "#" },
-	{ name: "Portfolio", href: "#" },
-	{ name: "Contact", href: "#" },
+	{ name: "Experience", href: "#experience" },
+	{ name: "Portfolio", href: "#portfolio" },
+	{ name: "Contact", href: "#contact" },
 ];
 
 export default function Header() {
