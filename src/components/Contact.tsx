@@ -18,7 +18,9 @@ export default function Contact() {
 					Contact
 				</h2>
 				<div className='flex flex-col py-16 gap-8'>
-					<p className='text-4xl leading-snug'>Thank you for your time!</p>
+					<p className='text-4xl leading-snug text-indigo-800'>
+						Thank you for your time!
+					</p>
 					<p className='text-md leading-relaxed'>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius
 						metus elit. Mauris vestibulum nisl eu felis pellentesque, sed dictum
@@ -37,7 +39,7 @@ export default function Contact() {
 				<div className=''>
 					<div className='p4 flex gap-8'>
 						<a
-							className='rounded border-2 border-indigo-600 text- text-indigo-600 px-5 py-3'
+							className='rounded border-4 border-indigo-600 text-indigo-600 px-5 py-3'
 							href='https://www.linkedin.com/in/sabrinaferrergregory/'
 							target='_blank'
 						>

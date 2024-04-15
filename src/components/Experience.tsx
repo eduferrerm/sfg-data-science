@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface ExperienceType {
 	position: string;
 	business: string;
@@ -7,6 +9,17 @@ interface ExperienceType {
 }
 
 const EXPERIENCES: ExperienceType[] = [
+	{
+		position: "Orientation Leader & Cohort Leadership Guide",
+		business: "NYU Leonard N. Stern School of Business",
+		dates: "August 2023 - December 2023",
+		location: "New York, NY",
+		description: [
+			"Led orientation sessions to acclimate new students to the academic and social landscape, ensuring a seamless transition for over 600 incoming undergraduates",
+			"Directed the Cohort Leadership Program (CLP) at NYU Stern for a cohort of 31 students, providing personalized guidance and mentorship to facilitate their personal and professional growth",
+			"Designed and executed engaging workshops, fostering an inclusive and supportive learning environment for diverse cohorts, resulting in an increase in students’ self-awareness and leadership proficiency",
+		],
+	},
 	{
 		position: "DE&I Consulting & Data Analytics Summer Extern",
 		business: "Credera · Internship",
@@ -64,26 +77,40 @@ function ExperiencesItems({
 	experienceItem: ExperienceType;
 }) {
 	const { position, business, dates, location, description } = experienceItem;
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleOpenClose = () => {
+		setIsOpen(!isOpen);
+	};
+
 	return (
-		<div className='inline-flex flex-col gap-10 text-left w-full lg:w-4/12 p-5'>
+		<div
+			className={`inline-flex flex-col gap-5 text-left w-full h-max lg:w-3/12 p-5 lg:min-h-[400px] justify-between`}
+		>
 			<div className='flex flex-col gap-2'>
-				<div className='text-indigo-600 font-bold text-3xl leading-tight'>
+				<div className='text-indigo-800 font-bold text-3xl leading-tight mb-4'>
 					{position}
 				</div>
-				<p className='font-bold text-md'>{business}</p>
+				<p className='font-bold text-md leading-none'>{business}</p>
 				<p className='sm'>{dates}</p>
 				<p className='sm italic'>{location}</p>
 			</div>
-			<hr />
-			<div>
-				<h4 className='pb-5 text-sm font-bold'>Responsibilities</h4>
-				<ul>
+			<div onClick={handleOpenClose}>
+				<details open={isOpen}>
+					<summary className='py-5 text-sm font-bold text-indigo-600'>
+						<span className='pl-1 text-indigo-900'>Responsibilities</span>
+					</summary>
+
 					{description.map((descriptionItem) => (
-						<li className='pb-5' key={descriptionItem}>
-							{descriptionItem}
-						</li>
+						<>
+							<span className='pb-5' key={descriptionItem}>
+								{descriptionItem}
+							</span>
+							<br />
+							<br />
+						</>
 					))}
-				</ul>
+				</details>
 			</div>
 		</div>
 	);

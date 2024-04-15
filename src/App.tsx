@@ -1,4 +1,5 @@
 import "./App.css";
+import Background from "./components/Background";
 import Contact from "./components/Contact";
 import Experiences from "./components/Experience";
 import Header from "./components/Header";
@@ -8,11 +9,14 @@ import Portfolio from "./components/Portfolio";
 function App() {
 	return (
 		<>
-			<Header />
-			<Hero />
-			<Experiences />
-			<Portfolio />
-			<Contact />
+			<Background />
+			<div className='relative z-10'>
+				<Header />
+				<Hero />
+				<Experiences />
+				<Portfolio />
+				<Contact />
+			</div>
 		</>
 	);
 }
